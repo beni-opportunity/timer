@@ -14,22 +14,16 @@ const secondInput = document.getElementById('seconds');
 
 
 startButton.addEventListener('click', function(){
-
-    if(timerState == 'ready'){
-        startTimer();
-        return;
-    }
-
-
-    if(timerState == 'running'){
-        pauseTimer();
-        return;
-    }
-
-
-    if(timerState == 'paused'){
-        startTimer();
-        return;
+    switch (timerState) {
+        case 'ready':
+        case 'paused':
+            startTimer();
+            break;
+        case 'running':
+            pauseTimer();
+            break;
+        default:
+          alert('Ein Fehler ist aufgetreten');
     }
 })
 
@@ -54,6 +48,7 @@ function startTimer() {
     }
 
     timerState = 'running';
+    startButton.innerText = 'Timer pausieren';
 
     updateTimer();
 
@@ -75,6 +70,7 @@ function stopTimer(){
 function pauseTimer(){
     clearInterval(timerInterval);
     timerState = 'paused';
+    startButton.innerText = 'Timer starten';
 }
 
 
@@ -82,10 +78,7 @@ function pauseTimer(){
 function updateTimer() {
         
     if (totalSeconds <= 0) {
-        clearInterval(timerInterval);
-        document.getElementById('countdown').innerText = '00:00:00:00';
-        timerState = 'ready';
-        alert('Timer ist abgelaufen');
+        endTimer();
         return;
     }
 
@@ -107,4 +100,14 @@ function resetInputFields(){
     minuteInput.value = 0;
     secondInput.value = 0;
 }
+
+function endTimer(){
+    clearInterval(timerInterval);
+    document.getElementById('countdown').innerText = '00:00:00:00';
+    timerState = 'ready';
+    startButton.innerText = 'Timer starten';
+    alert('Timer ist abgelaufen');
+}
+
+
 

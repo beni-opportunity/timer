@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Timer</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -21,26 +29,28 @@
     <main>
 
         <div>
-            <div>
+            <div class="timer__bottom">
 
-                <div>
-                    <input type="number" id="days" min="0" value="0">
-                    <label for="days">Tage</label>
-                </div>
+                <div class="input__list">
+                    <div class="input__group">
+                        <input type="number" id="days" min="0" value="0" onclick="this.select()">
+                        <label for="days">Tage</label>
+                    </div>
 
-                <div>
-                    <input type="number" id="hours" min="0" max="23" value="0">
-                    <label for="hours">Stunden</label>
-                </div>
+                    <div class="input__group">
+                        <input type="number" id="hours" min="0" max="23" value="0" onclick="this.select()">
+                        <label for="hours">Stunden</label>
+                    </div>
 
-                <div>
-                    <input type="number" id="minutes" min="0" max="59" value="0">
-                    <label for="minutes">Minuten</label>
-                </div>
+                    <div class="input__group">
+                        <input type="number" id="minutes" min="0" max="59" value="0" onclick="this.select()">
+                        <label for="minutes">Minuten</label>
+                    </div>
 
-                <div>
-                    <input type="number" id="seconds" min="0" max="59" value="0">
-                    <label for="seconds">Sekunden</label>
+                    <div class="input__group">
+                        <input type="number" id="seconds" min="0" max="59" value="0" onclick="this.select()">
+                        <label for="seconds">Sekunden</label>
+                    </div>
                 </div>
 
                 <button id="start">Timer starten</button>
