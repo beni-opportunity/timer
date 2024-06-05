@@ -4,7 +4,6 @@
     --color-orange: #BD7418;
 }
 
-
 html{
     background-color: #f1f1f1;
 }
@@ -13,13 +12,13 @@ body{
     background-color: #fff;
     border-radius: 0.5rem;
     padding: 1rem;
-    max-width: 64rem;
+    max-width: 32rem;
     margin-inline: auto;
 }
 
 header{
     text-align: center;
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
 }
 
 h1{
@@ -45,7 +44,7 @@ input{
     width: 100%;
     text-align: center;
     font-family: 'JetBrains Mono', sans-serif;
-    font-size: 7rem;
+    font-size: 5rem;
     background-color: transparent;
     color: rgba(255,255,255,0.75);
 }
@@ -58,9 +57,6 @@ input:focus{
 input::selection{
     background-color: var(--color-orange);
 }
-
-
-
 
 .input__list{
     display: grid;
@@ -82,13 +78,11 @@ input::selection{
 
 .input__group:has(input:focus){
     border: 2px solid var(--color-orange);
-    /* background-color: #FBEFDF; */
 }
 
 input:focus ~ label{
     color: var(--color-orange);
 }
-
 
 .timer__bottom{
     padding: 2rem;

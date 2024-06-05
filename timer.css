@@ -1,0 +1,27 @@
+
+
+
+.time__section{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.time__item{
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.time__item > div,
+.time__item > svg{
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+}
+
+
+.circle {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
