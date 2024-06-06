@@ -20,7 +20,8 @@
 
             <div class="time__item">
                 <svg height="100" width="100">
-                    <circle class="circle" cx="50" cy="50" r="45" stroke="#231f20" stroke-width="4" fill-opacity="0" />
+                    <circle class="circle" cx="50" cy="50" r="45" stroke="#231f20" stroke-width="4" fill-opacity="0"
+                        data-type="days" />
                 </svg>
                 <div>0</div>
             </div>
@@ -28,7 +29,8 @@
 
             <div class="time__item">
                 <svg height="100" width="100">
-                    <circle class="circle" cx="50" cy="50" r="45" stroke="#231f20" stroke-width="4" fill-opacity="0" />
+                    <circle class="circle" cx="50" cy="50" r="45" stroke="#231f20" stroke-width="4" fill-opacity="0"
+                        data-type="hours" />
                 </svg>
                 <div>0</div>
             </div>
@@ -36,7 +38,8 @@
 
             <div class="time__item">
                 <svg height="100" width="100">
-                    <circle class="circle" cx="50" cy="50" r="45" stroke="#231f20" stroke-width="4" fill-opacity="0" />
+                    <circle class="circle" cx="50" cy="50" r="45" stroke="#231f20" stroke-width="4" fill-opacity="0"
+                        data-type="minutes" />
                 </svg>
                 <div>0</div>
             </div>
@@ -44,11 +47,34 @@
 
             <div class="time__item">
                 <svg height="100" width="100">
-                    <circle class="circle" cx="50" cy="50" r="45" stroke="#231f20" stroke-width="4" fill-opacity="0" />
+                    <circle class="circle" cx="50" cy="50" r="45" stroke="#231f20" stroke-width="4" fill-opacity="0"
+                        data-type="seconds" />
                 </svg>
                 <div>0</div>
             </div>
 
+        </section>
+
+
+        <section>
+            <div>
+                <input type="number" id="day" value="0">
+                <label for="">Tage</label>
+            </div>
+            <div>
+                <input type="number" id="hour" value="0">
+                <label for="">Stunden</label>
+            </div>
+            <div>
+                <input type="number" id="minute" value="0">
+                <label for="">Minuten</label>
+            </div>
+            <div>
+                <input type="number" id="second" value="0">
+                <label for="">Sekunden</label>
+            </div>
+
+            <button onclick="startTimer()">Start Timer</button>
         </section>
 
 

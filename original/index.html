@@ -33,22 +33,22 @@
 
                 <div class="input__list">
                     <div class="input__group">
-                        <input type="number" id="days" min="0" value="0" onclick="this.select()">
+                        <input type="number" id="days" min="0" value="0">
                         <label for="days">Tage</label>
                     </div>
 
                     <div class="input__group">
-                        <input type="number" id="hours" min="0" max="23" value="0" onclick="this.select()">
+                        <input type="number" id="hours" min="0" max="23" value="0">
                         <label for="hours">Stunden</label>
                     </div>
 
                     <div class="input__group">
-                        <input type="number" id="minutes" min="0" max="59" value="0" onclick="this.select()">
+                        <input type="number" id="minutes" min="0" max="59" value="0">
                         <label for="minutes">Minuten</label>
                     </div>
 
                     <div class="input__group">
-                        <input type="number" id="seconds" min="0" max="59" value="0" onclick="this.select()">
+                        <input type="number" id="seconds" min="0" max="59" value="0">
                         <label for="seconds">Sekunden</label>
                     </div>
                 </div>
@@ -59,11 +59,11 @@
     </main>
 
     <footer>
-        <button id="reset" onclick="stopTimer()">Timer zurücksetzen</button>
+        <button id="reset" onclick="endTimer(true)">Timer zurücksetzen</button>
     </footer>
 
 
-
+    <!-- JS einbinden -->
     <script src="index.js"></script>
 </body>
 

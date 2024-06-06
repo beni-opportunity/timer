@@ -2,14 +2,18 @@ let timerInterval;
 let totalSeconds = false;
 let timerState = 'ready';
 
+// Buttons
 const startButton = document.getElementById('start');
 const resetButton = document.getElementById('reset');
-const pauseButton = document.getElementById('pause');
 
+// Input Felder
 const dayInput = document.getElementById('days');
 const hourInput = document.getElementById('hours');
 const minuteInput = document.getElementById('minutes');
 const secondInput = document.getElementById('seconds');
+
+// Timer Element
+const timer = document.getElementById('countdown');
 
 
 
@@ -23,15 +27,16 @@ startButton.addEventListener('click', function(){
             pauseTimer();
             break;
         default:
-          alert('Ein Fehler ist aufgetreten');
+            alert('Ein Fehler ist aufgetreten');
     }
 })
 
 
 function startTimer() {
-    clearInterval(timerInterval); // Clear any existing timer
+    clearInterval(timerInterval);
     
 
+    // First Start?
     if(!totalSeconds){
         const days = parseInt(dayInput.value, 10);
         const hours = parseInt(hourInput.value, 10);
@@ -41,7 +46,7 @@ function startTimer() {
         resetInputFields();
     }
 
-    
+    // Validation
     if (isNaN(totalSeconds) || totalSeconds <= 0) {
         alert('Bitte gib einen validen Input ein');
         return;
@@ -54,17 +59,6 @@ function startTimer() {
 
     timerInterval = setInterval(updateTimer, 1000);
 }
-
-
-
-function stopTimer(){
-    clearInterval(timerInterval);
-    totalSeconds = 0;
-    timerState = 'ready';
-    document.getElementById('countdown').innerText = '00:00:00:00';
-    alert("Timer wurde zurückgesetzt");
-}
-
 
 
 function pauseTimer(){
@@ -89,9 +83,8 @@ function updateTimer() {
     const m = Math.floor((totalSeconds % 3600) / 60);
     const s = totalSeconds % 60;
 
-    document.getElementById('countdown').innerText = `${String(d).padStart(2, '0')}:${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    timer.innerText = `${String(d).padStart(2, '0')}:${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
 }
-
 
 
 function resetInputFields(){
@@ -101,13 +94,16 @@ function resetInputFields(){
     secondInput.value = 0;
 }
 
-function endTimer(){
+
+function endTimer(reset = false){
     clearInterval(timerInterval);
-    document.getElementById('countdown').innerText = '00:00:00:00';
+    timer.innerText = '00:00:00:00';
     timerState = 'ready';
+    totalSeconds = 0;
     startButton.innerText = 'Timer starten';
-    alert('Timer ist abgelaufen');
+    reset ? alert('Timer wurde zurückgesetzt') : alert('Timer ist abgelaufen');
 }
+
 
 
 

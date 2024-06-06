@@ -20,8 +20,9 @@
 }
 
 
-.circle {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-}
 
+circle {
+    fill: none;
+    stroke: blue;
+    stroke-width: 4;
+}
